@@ -1,0 +1,7 @@
+{
+  "name": "Billuyo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
