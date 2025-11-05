@@ -1,27 +1,34 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
 import LoginComponent from '../components/Login';
-import { useHistory } from 'react-router';
+import { User } from 'firebase/auth'; // Importamos el tipo User
 
 const LoginPage: React.FC = () => {
-  const history = useHistory();
+  const router = useIonRouter();
 
-  // Función que se llama cuando el login es exitoso
-  const handleLoginSuccess = () => {
-    // Aquí puedes guardar el token de autenticación si lo tienes
+  // Función que se llama cuando el login de Firebase es exitoso
+  const handleLoginSuccess = (user: User, idToken: string) => {
+    // 1. Aquí se guardaría el token de autenticación (NestJS JWT)
+    //    Por ahora, guardamos el token de Firebase para simular.
+    localStorage.setItem('firebaseIdToken', idToken);
+    
+    // NOTA: EL PRÓXIMO PASO LÓGICO ES ENVIAR ESTE idToken AL BACKEND DE NESTJS
+    // para que NestJS lo verifique y devuelva su propio token JWT.
 
-    // Redirige al usuario a la página principal de la aplicación (por ejemplo, /tabs/tab1)
-    history.replace('/folder/Inbox'); 
+    console.log(`Usuario autenticado: ${user.email}. Redirigiendo...`);
+
+    // 2. Redirige al usuario a la página principal de la aplicación
+    router.push('/folder/Inbox', 'root', 'replace');
   };
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Bienvenido</IonTitle>
+          <IonTitle>Bienvenido al Agente Financiero</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen className="ion-padding">
+      <IonContent fullscreen className="ion-padding ion-text-center">
         {/* Usamos el componente de Login y le pasamos la función de éxito */}
         <LoginComponent onLoginSuccess={handleLoginSuccess} />
       </IonContent>
