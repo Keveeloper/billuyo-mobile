@@ -5,7 +5,7 @@ import { logoGoogle, logIn } from 'ionicons/icons';
 // Importaciones de Firebase
 import { getAuth, GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
-import firebaseConfig from '../firebase-config/firebaseConfig'; // Importamos la configuración
+import firebaseConfig from '../firebase-config/firebaseConfig';
 
 // Inicializamos Firebase fuera del componente para evitar reinicializaciones
 const app = initializeApp(firebaseConfig);

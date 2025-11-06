@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDeTY6TwrYdKjPUWMaHIpt1dSkfoDLZ6V0",
-  authDomain: "gen-lang-client-0016482258.firebaseapp.com",
-  projectId: "gen-lang-client-0016482258",
-  storageBucket: "gen-lang-client-0016482258.firebasestorage.app",
-  messagingSenderId: "329448949687",
-  appId: "1:329448949687:web:f908401f18415c56808a32",
-  measurementId: "G-6FDRK2F5H8"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 export default firebaseConfig;
