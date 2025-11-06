@@ -8,6 +8,7 @@ import { initializeApp } from 'firebase/app';
 import firebaseConfig from '../firebase-config/firebaseConfig';
 
 // Inicializamos Firebase fuera del componente para evitar reinicializaciones
+// cada vez que el componente se renderiza
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
