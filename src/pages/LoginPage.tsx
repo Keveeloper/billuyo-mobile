@@ -3,7 +3,8 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter } fr
 import LoginComponent from '../components/Login';
 import { User } from 'firebase/auth'; // Importamos el tipo User
 
-const LoginPage: React.FC = () => {
+// const LoginPage: React.FC = () => {
+const LoginPage = () => {
   const router = useIonRouter();
 
   // Función que se llama cuando el login de Firebase es exitoso
