@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
-import LoginComponent from '../components/Login';
+import LoginComponent from '../components/login/Login';
 import { User } from 'firebase/auth'; // Importamos el tipo User
 
 // const LoginPage: React.FC = () => {
