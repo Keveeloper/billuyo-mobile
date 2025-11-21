@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
 import LoginComponent from '../../components/login/Login';
 import { User } from 'firebase/auth'; // Importamos el tipo User
+import './LoginPage.scss';
 
 /**
  * Descripción:   Página de Login que utiliza el componente de LoginComponent.
@@ -28,13 +29,13 @@ const LoginPage = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Bienvenido al Agente Financiero</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen className="ion-padding ion-text-center">
-        <LoginComponent onLoginSuccess={handleLoginSuccess} />
+      <IonContent className='aurora-bg'>
+        <img className='billuyo-logo' src="/billuyo-logo.png" alt="" />
+        <div>
+          <p>Asistente de</p>
+          <p></p>
+        </div>
+        {/* <LoginComponent onLoginSuccess={handleLoginSuccess} /> */}
       </IonContent>
     </IonPage>
   );
