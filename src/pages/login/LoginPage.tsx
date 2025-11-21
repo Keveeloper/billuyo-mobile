@@ -1,13 +1,17 @@
-import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
-import LoginComponent from '../components/login/Login';
+import LoginComponent from '../../components/login/Login';
 import { User } from 'firebase/auth'; // Importamos el tipo User
 
-// const LoginPage: React.FC = () => {
+/**
+ * Descripción:   Página de Login que utiliza el componente de LoginComponent.
+ *                Maneja la autenticación y redirección tras el login exitoso.
+ * Created by:    Kevind Ospina
+ * Created at:    2025-10-20
+ * Last modified: 2025-11-20
+ */
 const LoginPage = () => {
   const router = useIonRouter();
 
-  // Función que se llama cuando el login de Firebase es exitoso
   const handleLoginSuccess = (user: User, idToken: string) => {
     // 1. Aquí se guardaría el token de autenticación (NestJS JWT)
     //    Por ahora, guardamos el token de Firebase para simular.
@@ -30,7 +34,6 @@ const LoginPage = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen className="ion-padding ion-text-center">
-        {/* Usamos el componente de Login y le pasamos la función de éxito */}
         <LoginComponent onLoginSuccess={handleLoginSuccess} />
       </IonContent>
     </IonPage>
