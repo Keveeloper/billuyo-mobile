@@ -82,9 +82,10 @@ const LoginComponent = (props: ContainerProps) => {
         disabled={isLoading}
         className="
           h-11 rounded-full 
-          bg-white/[0.05] 
-          border-t-[2px] border-t-white/10
-          border-b-[2px] border-b-white/10
+          bg-white/5
+          normal-case 
+          border-t-2 border-t-white/10
+          border-b-2 border-b-white/10
           backdrop-blur-md
           text-white
         "

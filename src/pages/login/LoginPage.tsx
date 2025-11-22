@@ -35,7 +35,7 @@ const LoginPage = () => {
           <p className='text-sm font-[Poppins]'>Asistente de</p>
           <p className='text-gray-50 text-base font-[Montserrat]'>Finanzas personales</p>
         </div>
-        <div className='absolute w-[139.5px] top-[52%] right-[5%]'>
+        <div className='absolute w-[140px] top-[52%] right-[5%]'>
           <p className='text-sm font-[Poppins]'>Control total</p>
           <p className='text-gray-50 text-base font-[Montserrat]'>solo con prompts</p>
         </div>
