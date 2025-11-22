@@ -5,6 +5,9 @@ import Menu from './components/Menu';
 import Page from './pages/Page';
 import LoginPage from './pages/login/LoginPage';
 
+// tailwindCSS
+import "./App.css"
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 

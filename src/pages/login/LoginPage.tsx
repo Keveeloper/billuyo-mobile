@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
 import LoginComponent from '../../components/login/Login';
-import { User } from 'firebase/auth'; // Importamos el tipo User
+import { User } from 'firebase/auth';
 import './LoginPage.scss';
 
 /**
@@ -29,13 +29,17 @@ const LoginPage = () => {
 
   return (
     <IonPage>
-      <IonContent className='aurora-bg'>
+      <IonContent className='aurora-bg' scrollY={false}>
         <img className='billuyo-logo' src="/billuyo-logo.png" alt="" />
-        <div>
-          <p>Asistente de</p>
-          <p></p>
+        <div className='absolute w-1/2 top-[30%]'>
+          <p className='text-sm font-[Poppins]'>Asistente de</p>
+          <p className='text-gray-50 text-base font-[Montserrat]'>Finanzas personales</p>
         </div>
-        {/* <LoginComponent onLoginSuccess={handleLoginSuccess} /> */}
+        <div className='absolute w-[139.5px] top-[52%] right-[5%]'>
+          <p className='text-sm font-[Poppins]'>Control total</p>
+          <p className='text-gray-50 text-base font-[Montserrat]'>solo con prompts</p>
+        </div>
+        <LoginComponent onLoginSuccess={handleLoginSuccess} />
       </IonContent>
     </IonPage>
   );

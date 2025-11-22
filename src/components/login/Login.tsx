@@ -73,40 +73,70 @@ const LoginComponent = (props: ContainerProps) => {
   };
 
   return (
-    <IonGrid fixed>
-      <IonRow className="ion-justify-content-center">
-        <IonCol size="12" size-md="6" size-lg="4">
-          <h2 className="ion-text-center ion-padding-vertical">
-            Inicia Sesión en tu Agente Financiero
-          </h2>
+    <div className='absolute pt-18 w-[90%] h-1/3 flex flex-col bottom-0 left-[5%]'>
+      <p className='mb-5 text-gray-50 text-base text-center font-[Montserrat]'>¡Pongamos orden a tus finanzas ahora mismo!</p>
+      <IonButton        
+        fill="clear" 
+        expand="block"
+        onClick={handleGoogleLogin}
+        disabled={isLoading}
+        className="
+          h-11 rounded-full 
+          bg-white/[0.05] 
+          border-t-[2px] border-t-white/10
+          border-b-[2px] border-b-white/10
+          backdrop-blur-md
+          text-white
+        "
+      >
+        {isLoading ? 
+          (
+            <IonSpinner name="crescent" className="text-white" />
+          ) 
+        : 
+          (
+            <div className="flex items-center justify-center w-full gap-3 text-base font-medium tracking-wide">              
+              <IonIcon icon={logoGoogle} className="text-xl" />
+              <span>Iniciar sesión con Google</span>
+            </div>
+          )
+        }
+      </IonButton>
+    </div>
+    // <IonGrid fixed>
+    //   <IonRow className="ion-justify-content-center">
+    //     <IonCol size="12" size-md="6" size-lg="4">
+    //       <h2 className="ion-text-center ion-padding-vertical">
+    //         Inicia Sesión en tu Agente Financiero
+    //       </h2>
           
-          {error && (
-            <IonNote color="danger" className="ion-padding-start ion-padding-bottom">
-              {error}
-            </IonNote>
-          )}
+    //       {error && (
+    //         <IonNote color="danger" className="ion-padding-start ion-padding-bottom">
+    //           {error}
+    //         </IonNote>
+    //       )}
 
-          <div className="ion-padding-top">
-            <IonButton 
-              expand="block" 
-              onClick={handleGoogleLogin} 
-              color="primary"
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <IonSpinner name="crescent" />
-              ) : (
-                <>
-                  <IonIcon icon={logoGoogle} slot="start" />
-                  Ingresar con Google
-                </>
-              )}
-            </IonButton>
-          </div>
+    //       <div className="ion-padding-top">
+    //         <IonButton 
+    //           expand="block" 
+    //           onClick={handleGoogleLogin} 
+    //           color="primary"
+    //           disabled={isLoading}
+    //         >
+    //           {isLoading ? (
+    //             <IonSpinner name="crescent" />
+    //           ) : (
+    //             <>
+    //               <IonIcon icon={logoGoogle} slot="start" />
+    //               Ingresar con Google
+    //             </>
+    //           )}
+    //         </IonButton>
+    //       </div>
           
-        </IonCol>
-      </IonRow>
-    </IonGrid>
+    //     </IonCol>
+    //   </IonRow>
+    // </IonGrid>
   );
 };
 
